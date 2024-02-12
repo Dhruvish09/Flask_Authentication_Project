@@ -1,0 +1,83 @@
+Setting up Flask Authentication Project
+
+Step 1: Create Virtual Environment
+
+    # Create a new directory for your project (if not already created)
+    mkdir flask_authentication_project
+    cd flask_authentication_project
+
+    # Create a virtual environment
+    python3 -m venv venv
+    
+    # Activate the virtual environment
+    # On Windows:
+    venv\Scripts\activate
+    
+    # On macOS/Linux:
+    source venv/bin/activate
+
+Step 2: Install Requirements
+
+    # Make sure you are in the project directory and your virtual environment is activated
+    # Install required Python packages
+    pip3 install -r requirements.txt
+
+Step 3: Configure Database
+
+    Create a new schema in your database and add its connection details to the .env file.
+
+    EX:
+    SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:root@localhost/flask_auth
+
+Step 4: Migrate Database
+
+    # Initialize the database migration
+    flask db init
+
+    # Create a migration script
+    flask db migrate
+
+    # Apply the migration to the database
+    flask db upgrade
+
+Step 5: Start API Checking
+
+    Ensure that your Flask application is running.
+    Use the provided Postman collection link to test the API endpoints.
+
+    Postman_Link: https://www.postman.com/telecoms-cosmologist-31996574/workspace/authentication/collection/30272974-24965f82-86cc-4ec4-874d-5ea7505c802d?action=share&creator=30272974
+
+
+Forgot Password Functionality::::-
+
+Implemented two methods:
+
+(1)API reset password:
+
+Users can initiate password reset by providing their email via API request.
+Upon request, an email containing a reset link is sent to the user's email address.
+The link includes a token for password reset.
+
+(2)Direct Template reset password:
+
+Users can access a password reset template directly via URL with the provided token.
+This route renders the template where users can input their new password.
+
+
+
+
+
+OTP Login Functionality::::-
+
+Utilizing Twilio for seamless authentication:
+
+API Endpoint (/signin_with_otp):
+
+Users provide their phone number and receive an OTP via SMS.
+Upon receiving the OTP, users enter it along with their phone number for authentication.
+If the OTP is valid, users are granted access to their account.
+Twilio Integration:
+
+Twilio's SMS service is integrated into the application for sending OTPs securely.
+Twilio API facilitates the delivery of OTPs to users' phone numbers in real-time.
+This integration ensures reliable and efficient OTP-based authentication for users.

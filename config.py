@@ -8,7 +8,7 @@ SECRET_KEY = secrets.token_hex(24)
 load_dotenv()
 
 class Config:
-    DATABASE_URI = os.getenv('DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     APP_URL = os.getenv('APP_URL')
     TEMPLATE_FOLDER = 'templates'
