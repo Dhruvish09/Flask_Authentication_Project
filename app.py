@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 from common.db import db
-from config import Config,EmailConfig
+from config import Config,EmailConfig,TwilioConfig
 from email_service.email_sender import MailProvider
 from authentication_microservice.routes import auth_bp
 import secrets
@@ -15,6 +15,7 @@ def create_app():
     app = Flask(__name__, template_folder='templates', static_folder='static')
     app.config.from_object(Config)
     app.config.from_object(EmailConfig)
+    app.config.from_object(TwilioConfig)
 
     # CORS Configuration
     CORS(app, resources={r"/*": {"origins": "*"}})

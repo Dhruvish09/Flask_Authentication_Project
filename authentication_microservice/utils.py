@@ -6,15 +6,16 @@ from datetime import datetime, timedelta
 from twilio.rest import Client
 import secrets
 import re
+from config import TwilioConfig
 
 from common.logger_config import setup_logger
 
 logger = setup_logger()
 
 # Configure Twilio credentials
-TWILIO_ACCOUNT_SID = 'ACb1d41ca5fe6f73f9d25cf857e3240622'
-TWILIO_AUTH_TOKEN = 'dec45d13468ca28bf259fee51c9184d1'
-TWILIO_PHONE_NUMBER = '+13097238114'
+TWILIO_ACCOUNT_SID = TwilioConfig.TWILIO_ACCOUNT_SID
+TWILIO_AUTH_TOKEN = TwilioConfig.TWILIO_AUTH_TOKEN
+TWILIO_PHONE_NUMBER = TwilioConfig.TWILIO_PHONE_NUMBER
 
 # Initialize Twilio client
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
