@@ -1,0 +1,2 @@
+# Flask_Authentication_Project
+ This Flask Authentication Project provides a streamlined solution for implementing secure user authentication in Flask-based web applications. It features robust password encryption, user registration, and login functionalities. With role-based access control (RBAC) and session management, developers can easily integrate and customize authentication mechanisms to suit their application's needs.
