@@ -29,6 +29,11 @@ Step 3: Configure Database
     EX:
     SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:root@localhost/flask_auth
 
+    username = root
+    password = root
+    host = localhost
+    schema_name = flask_auth
+
 Step 4: Migrate Database
 
     # Initialize the database migration
